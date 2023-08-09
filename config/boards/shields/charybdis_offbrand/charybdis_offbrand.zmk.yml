@@ -1,0 +1,14 @@
+file_format: "1"
+id: charybdis_offbrand
+name: Charybdis Off
+type: shield
+url: https://github.com/jakekausler/charybdis_off
+requires: [pro_micro]
+exposes: []
+features:
+ - keys
+ - encoder
+ - pointer
+siblings:
+ - charybdis_offbrand_left
+ - charybdis_offbrand_right

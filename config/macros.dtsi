@@ -1,0 +1,60 @@
+  macro_quotes: macro_quotes {
+    compatible = "zmk,behavior-macro";
+    label = "macro_quotes";
+    #binding-cells = <0>;
+    bindings = <&kp SQT>, <&kp SQT>, <&kp LEFT>;
+  };
+  macro_dquotes: macro_dquotes {
+    compatible = "zmk,behavior-macro";
+    label = "macro_dquotes";
+    #binding-cells = <0>;
+    bindings = <&kp DQT>, <&kp DQT>, <&kp LEFT>;
+  };
+  macro_braces: macro_braces {
+    compatible = "zmk,behavior-macro";
+    label = "macro_braces";
+    #binding-cells = <0>;
+    bindings = <&kp LBRC>, <&kp RBRC>, <&kp LEFT>;
+  };
+  macro_parens: macro_parens {
+    compatible = "zmk,behavior-macro";
+    label = "macro_parens";
+    #binding-cells = <0>;
+    bindings = <&kp LPAR>, <&kp RPAR>, <&kp LEFT>;
+  };
+  macro_brackets: macro_brackets {
+    compatible = "zmk,behavior-macro";
+    label = "macro_brackets";
+    #binding-cells = <0>;
+    bindings = <&kp LBKT>, <&kp RBKT>, <&kp LEFT>;
+  };
+  macro_kinesis: macro_kinesis {
+    compatible = "zmk,behavior-macro";
+    label = "macro_kinesis";
+    #binding-cells = <0>;
+    bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
+  };
+  m_user: m_user {
+    compatible = "zmk,behavior-macro";
+    label = "m_user";
+    #binding-cells = <0>;
+    bindings = <&kp J>, <&kp A>, <&kp K>, <&kp E>, <&kp K>, <&kp A>, <&kp U>, <&kp S>, <&kp L>, <&kp E>, <&kp R>;
+  };
+  m_pass: m_pass {
+    compatible = "zmk,behavior-macro";
+    label = "m_pass";
+    #binding-cells = <0>;
+    bindings = <&kp LS(J)>, <&kp A>, <&kp K>, <&kp E>, <&kp N0>, <&kp N2>, <&kp N1>, <&kp F>, <&kp N2>, <&kp F>, <&kp N1>, <&kp EXCL>;
+  };
+  m_yahoo: m_yahoo {
+    compatible = "zmk,behavior-macro";
+    label = "m_yahoo";
+    #binding-cells = <0>;
+    bindings = <&kp AT>, <&kp Y>, <&kp A>, <&kp H>, <&kp O>, <&kp O>, <&kp DOT>, <&kp C>, <&kp O>, <&kp M>;
+  };
+  m_gmail: m_gmail {
+    compatible = "zmk,behavior-macro";
+    label = "m_gmail";
+    #binding-cells = <0>;
+    bindings = <&kp AT>, <&kp G>, <&kp M>, <&kp A>, <&kp I>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp M>;
+  };
