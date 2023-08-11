@@ -1,0 +1,2 @@
+board: [ "nice_nano_v2" ]
+shield: [ "charybdis_left", "charybdis_right" ]
