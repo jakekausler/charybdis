@@ -156,3 +156,43 @@
     UC_MACRO(name ## _upper, &kp U0 &kp U1 &kp U2 &kp U3) \
     UC_MODMORPH(name, &name ## _lower, &name ## _upper)
 
+#define COMBO(NAME, TIMEOUT, KEYPOS, BINDINGS) \
+    combo_##NAME { \
+        timeout-ms = <TIMEOUT>; \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+    };
+#define COMBO_WITH_LAYER(NAME, TIMEOUT, KEYPOS, BINDINGS, LAYERS) \
+    combo_##NAME { \
+        timeout-ms = <TIMEOUT>; \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        layers = <LAYERS>; \
+    };
+
+#define MODMORPH(name, keycode, shifted_keycode) \
+    UC_MODMORPH(name, &kp keycode, &kp shifted_keycode)
+
+#define CTRL_MODMORPH(name, keycode, ctrl_keycode) \
+     / { \
+          behaviors { \
+               name: name { \
+                    compatible = "zmk,behavior-mod-morph"; \
+                    label = ZMK_HELPER_STRINGIFY(UC_MORPH_ ## name); \
+                    #binding-cells = <0>; \
+                    bindings = <&kp keycode>, <&kp ctrl_keycode>; \
+                    mods = <(MOD_LCTL|MOD_RCTL)>; \
+               }; \
+          }; \
+     };
+
+// Home Row Mods Macro
+#define HRML(k1,k2,k3,k4) &hm_l LGUI  k1 &hm_l LALT k2        &hm_shift_l LSHFT k3 &hm_l LCTRL k4
+#define HRMR(k1,k2,k3,k4) &hm_r RCTRL k1 &hm_shift_r RSHFT k2 &hm_r RALT  k3       &hm_r RGUI  k4
+
+// Bluetoth
+#define BTS(profile) &bt BT_SEL profile
+
+// Hyper
+#define HYPER LS(LC(LA(LGUI)))
+#define MEH LS(LC(LA))

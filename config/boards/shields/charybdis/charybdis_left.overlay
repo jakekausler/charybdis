@@ -1,16 +1,13 @@
-#include "charybdis_offbrand.dtsi"
+#include "charybdis.dtsi"
 
-kscan0: kscan {
-    compatible = "zmk,kscan-gpio-matrix";
-    label = "KSCAN";
-
-    diode-direction = "col2row";
+&kscan0 {
     row-gpios
         = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
     
     col-gpios
@@ -21,4 +18,11 @@ kscan0: kscan {
         , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
 
+};
+
+&left_top_encoder {
+    status = "okay";
+};
+&left_bottom_encoder {
+    status = "okay";
 };

@@ -1,0 +1,103 @@
+#define KEYS_L  17 18 19 29 30 31 32 33 48 49 50 51 52 
+#define KEYS_R 22 23 24 25 26 42 43 44 45 46 61 62 63 64 65
+#define KEYS_T 35 36 37 38 39 40 53 54 55 56 57 58 59 60 72 73 74 75 76 77
+
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+
+/ {
+    behaviors {
+      #include "macros.dtsi"
+
+      // Further optimization using urob's timerless homerow mods method:
+      // https://github.com/urob/zmk-config#timeless-homerow-mods
+      hm_l: homerow_mods_left {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS_LEFT";
+          #binding-cells = <2>;
+          bindings = <&kp>, <&kp>;
+          flavor = "balanced";
+          tapping-term-ms = <280>; // repeat on tap-into-hold
+          quick-tap-ms = <175>;
+          global-quick-tap-ms = <150>;
+          hold-trigger-key-positions = <KEYS_R KEYS_T>;
+          hold-trigger-on-release;
+      };
+      hm_r: homerow_mods_right {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS_RIGHT";
+          #binding-cells = <2>;
+          bindings = <&kp>, <&kp>;
+          flavor = "balanced";
+          tapping-term-ms = <280>; // repeat on tap-into-hold
+          quick-tap-ms = <175>;
+          global-quick-tap-ms = <150>;
+          hold-trigger-key-positions = <KEYS_L KEYS_T>;
+          hold-trigger-on-release;
+      };
+
+      // Positional Homerow mods for shift
+      // Use faster tapping term and disable some features that may
+      // cause false negatives.
+      hm_shift_l: hm_shift_l {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS_FAST_LEFT";
+          #binding-cells = <2>;
+          bindings = <&kp>, <&kp>;
+          flavor = "balanced";
+          tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+          quick_tap_ms = <175>;
+          // global-quick-tap-ms = <150>;         // requires PR #1387
+          hold-trigger-key-positions = <KEYS_R KEYS_T>;
+          // hold-trigger-on-release;             // requires PR #1423
+      };
+      hm_shift_r: hm_shift_r {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS_FAST_RIGHT";
+          #binding-cells = <2>;
+          bindings = <&kp>, <&kp>;
+          flavor = "balanced";
+          tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+          quick_tap_ms = <175>;
+          // global-quick-tap-ms = <150>;         // requires PR #1387
+          hold-trigger-key-positions = <KEYS_L KEYS_T>;
+          // hold-trigger-on-release;             // requires PR #1423
+      };
+
+      // toggle layer on tap, key press on hold
+      tog_kp: tog_kp {
+          compatible = "zmk,behavior-hold-tap";
+          label = "tog_kp";
+          #binding-cells = <2>;
+          bindings = <&kp>, <&tog>;
+          flavor = "balanced";
+          tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+          quick_tap_ms = <175>;
+          // global-quick-tap-ms = <150>;         // requires PR #1387
+      };
+
+      // toggle layer on tap, momentary layer on hold
+      tog_mo: tog_mo {
+          compatible = "zmk,behavior-hold-tap";
+          label = "tog_mo";
+          #binding-cells = <2>;
+          bindings = <&mo>, <&tog>;
+          flavor = "balanced";
+          tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+          quick_tap_ms = <175>;
+          // global-quick-tap-ms = <150>;         // requires PR #1387
+      };
+
+      // caps word on tap, momentary layer on hold
+      caps_mo: caps_mo {
+          compatible = "zmk,behavior-hold-tap";
+          label = "caps_mo";
+          #binding-cells = <2>;
+          bindings = <&caps_word>, <&tog>;
+          flavor = "balanced";
+          tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+          quick_tap_ms = <175>;
+          // global-quick-tap-ms = <150>;         // requires PR #1387
+      };
+    };
+};

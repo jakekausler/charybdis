@@ -1,0 +1,11 @@
+file_format: "1"
+id: charybdis
+name: Charybdis Off
+type: shield
+url: https://github.com/jakekausler/charybdis
+requires: [pro_micro]
+exposes: []
+features:
+ - keys
+ - encoder
+ - pointer

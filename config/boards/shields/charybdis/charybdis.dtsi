@@ -29,7 +29,79 @@
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┐
      RC(5,0)   RC(5,1)   RC(5,2)   RC(5,3)   RC(5,4)
 // └─────────┴─────────┴─────────┴─────────┴─────────┘
-
         >;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+
+        diode-direction = "col2row";
+    };
+
+    left_top_encoder: left_top_encoder {
+        compatible = "alps,ec11";
+        label = "LEFT_TOP_ENCODER";
+        a-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        resolution = <4>;
+        status = "disabled";
+    };
+
+    left_bottom_encoder: left_bottom_encoder {
+        compatible = "alps,ec11";
+        label = "LEFT_BOTTOM_ENCODER";
+        a-gpios = <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        resolution = <4>;
+        status = "disabled";
+    };
+
+    right_top_encoder: right_top_encoder {
+        compatible = "alps,ec11";
+        label = "RIGHT_TOP_ENCODER";
+        a-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        resolution = <4>;
+        status = "disabled";
+    };
+
+    right_bottom_encoder: right_bottom_encoder {
+        compatible = "alps,ec11";
+        label = "RIGHT_BOTTOM_ENCODER";
+        a-gpios = <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        resolution = <4>;
+        status = "disabled";
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <
+            &left_top_encoder
+            &left_bottom_encoder
+            &right_top_encoder
+            &right_bottom_encoder
+        >;
+    };
+
+    trackballs {
+		compatible = "zmk,keymap-trackballs";
+		trackballs = <&trackball>;
+	};
+
+};
+
+&spi0 {
+    compatible = "nordic,nrf-spim";
+    status = "disabled";
+
+    trackball: trackball@0 {
+        compatible = "pixart,pmw3610";
+        status = "disabled";
+        reg = <0>;
+        label = "TRACKBALL";
+        spi-max-frequency = <2000000>;
+        // duplex = <2048>; // required by 3-wire spi
     };
 };

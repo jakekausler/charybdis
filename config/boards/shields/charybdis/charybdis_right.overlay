@@ -1,6 +1,6 @@
-#include "charybdis_offbrand.dtsi"
+#include "charybdis.dtsi"
 
-kscan0: kscan {
+&kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
     label = "KSCAN";
 
@@ -11,7 +11,6 @@ kscan0: kscan {
         , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
     
     col-gpios
@@ -22,4 +21,25 @@ kscan0: kscan {
         , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
 
+};
+
+&right_top_encoder {
+    status = "okay";
+};
+&right_bottom_encoder {
+    status = "okay";
+};
+
+// trackball bus
+&spi0 {
+	status = "okay"; //okay
+	sck-pin = <19>;
+	mosi-pin = <20>;
+	miso-pin = <21>;
+	cs-gpios = <&pro_micro 18 GPIO_ACTIVE_LOW>;
+};
+
+&trackball {
+	status = "okay"; //okay
+	irq-gpios = <&pro_micro 99 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 };

@@ -4,10 +4,12 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: jakekausler
+      url-base: https://github.com/jakekausler
   projects:
     - name: zmk
-      remote: urob
-      revision: adv360
+      remote: jakekausler
+      revision: main
       import: app/west.yml
   self:
     path: config
