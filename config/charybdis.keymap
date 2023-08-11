@@ -79,7 +79,7 @@
     //                           LEFT                                                      RIGHT
     //     PINKY      RING      MIDDLE      INDEX      INNER         INNER      INDEX     MIDDLE      RING       PINKY
     // ┌────00────┬────01────┬────02────┬────03────┬────04────┐  ┌────05────┬────06────┬────07────┬────08────┬────09────┐
-        &trans     &trans     &trans     &trans     &trans        &trans     &trans     &trans     &trans     &trans S
+        &trans     &trans     &trans     &trans     &trans        &trans     &trans     &trans     &trans     &trans
     // ├────10────┼────11────┼────12────┼────13────┼────14────┤  ├────15────┼────16────┼────17────┼────18────┼────19────┤
         &trans     &trans     &trans     &trans     &trans        &trans     &trans     &trans     &trans     &trans
     // ├────20────┼────21────┼────22────┼────23────┴────24────┘  ├────25────┴────26────┼────27────┼────28────┼────29────┤
@@ -117,7 +117,7 @@
     //                           LEFT                                                      RIGHT
     //     PINKY      RING      MIDDLE      INDEX      INNER         INNER      INDEX     MIDDLE      RING       PINKY
     // ┌────00────┬────01────┬────02────┬────03────┬────04────┐  ┌────05────┬────06────┬────07────┬────08────┬────09────┐
-        &trans     &trans     &trans     &trans     &trans        &trans     &trans     &trans     &trans     &trans S
+        &trans     &trans     &trans     &trans     &trans        &trans     &trans     &trans     &trans     &trans
     // ├────10────┼────11────┼────12────┼────13────┼────14────┤  ├────15────┼────16────┼────17────┼────18────┼────19────┤
         &trans     &trans     &trans     &trans     &trans        &trans     &trans     &trans     &trans     &trans
     // ├────20────┼────21────┼────22────┼────23────┴────24────┘  ├────25────┴────26────┼────27────┼────28────┼────29────┤
@@ -155,7 +155,7 @@
     //                           LEFT                                                      RIGHT
     //     PINKY      RING      MIDDLE      INDEX      INNER         INNER      INDEX     MIDDLE      RING       PINKY
     // ┌────00────┬────01────┬────02────┬────03────┬────04────┐  ┌────05────┬────06────┬────07────┬────08────┬────09────┐
-        &trans     &trans     &trans     &trans     &trans        &trans     &trans     &trans     &trans     &trans S
+        &trans     &trans     &trans     &trans     &trans        &trans     &trans     &trans     &trans     &trans
     // ├────10────┼────11────┼────12────┼────13────┼────14────┤  ├────15────┼────16────┼────17────┼────18────┼────19────┤
         &trans     &trans     &trans     &trans     &trans        &trans     &trans     &trans     &trans     &trans
     // ├────20────┼────21────┼────22────┼────23────┴────24────┘  ├────25────┴────26────┼────27────┼────28────┼────29────┤
