@@ -4,12 +4,16 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: victor
+      url-base: https://github.com/victorlucachi
     - name: jakekausler
       url-base: https://github.com/jakekausler
   projects:
     - name: zmk
+    #  remote: victor
+    #  revision: pmw3610-aml
       remote: jakekausler
-      revision: main
+      revision: trackball_support
       import: app/west.yml
   self:
     path: config

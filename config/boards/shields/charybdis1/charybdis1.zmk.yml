@@ -1,6 +1,6 @@
 file_format: "1"
-id: charybdis
-name: Charybdis Off
+id: charybdis1
+name: Charybdis1
 type: shield
 url: https://github.com/jakekausler/charybdis
 requires: [pro_micro]

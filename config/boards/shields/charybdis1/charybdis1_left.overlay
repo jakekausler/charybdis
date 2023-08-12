@@ -1,4 +1,4 @@
-#include "charybdis.dtsi"
+#include "charybdis1.dtsi"
 
 &kscan0 {
     row-gpios
